@@ -5,9 +5,8 @@ import { Layout } from './Layout';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 
-
 const HomePage = lazy(() => import('../pages/Home'));
-// const RegisterPage = lazy(() => import('../pages/Register'));
+const RegisterPage = lazy(() => import('../pages/Register')); // Uncomment this line
 const LoginPage = lazy(() => import('../pages/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts'));
 
@@ -19,24 +18,21 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-
-
-  return  isRefreshing ? (<div>Loading...</div>) : (
+  return isRefreshing ? (
+    <div>Loading...</div>
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        {/* <Route
+        <Route
           path="register"
           element={
-            <RegisterPage />
-            // <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
-          } */}
-        {/* /> */}
+            <RegisterPage /> // Uncomment this line
+          }
+        />
         <Route
           path="login"
-          element={<LoginPage />
-            // <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
-          }
+          element={<LoginPage />}
         />
         <Route
           path="contacts"
@@ -44,5 +40,5 @@ export const App = () => {
         />
       </Route>
     </Routes>
-  )
+  );
 };

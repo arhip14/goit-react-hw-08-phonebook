@@ -28,8 +28,8 @@ import { useDispatch, useSelector} from 'react-redux';
 import { getAllContactsThunk } from 'redux/contacts/thunk';
 import { selectTotalContacts } from 'redux/contacts/selectors';
 import { ContactEditor } from 'components/ContactEdit/ContactEdit';
-import { Contact } from 'components/Contacts/Contacts'
-
+import {ContactList } from 'components/Contacts/Contacts'
+import {Filter} from 'components/Filter/Filter'
 
 
 export default function Contacts() {
@@ -45,8 +45,11 @@ export default function Contacts() {
       <div>
         <title>Your contacts</title>
       </div>
-      <ContactEditor/>
-    <Contact/>
+                  <Filter/>
+      <ContactEditor />
+
+      <ContactList />
+
     
       <ul>
       {contacts.map(({ id, name, number }) => (
