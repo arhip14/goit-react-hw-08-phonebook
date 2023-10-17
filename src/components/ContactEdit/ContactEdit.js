@@ -1,65 +1,33 @@
-import React, { useState } from 'react';
-
-const formStyles = {
-  textAlign: 'center',
-  padding: '20px',
-  border: '1px solid #ccc',
-  borderRadius: '5px',
-};
-
-const inputStyles = {
-  width: '100%',
-  padding: '10px',
-  marginBottom: '10px',
-  borderRadius: '5px',
-  border: '1px solid #ccc',
-};
-
-const buttonStyles = {
-  backgroundColor: 'blue',
-  color: 'white',
-  padding: '10px 20px',
-  borderRadius: '5px',
-  border: 'none',
-  cursor: 'pointer',
-};
+import { useDispatch } from 'react-redux';
+import { addNewContact } from 'redux/contacts/thunk'; // Adjust the path to your thunk file
 
 export const ContactEditor = () => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.elements.name.value;
+    const number = form.elements.number.value;
 
     if (name.trim() !== '' && number.trim() !== '') {
-      console.log('Name:', name);
-      console.log('Number:', number);
-      setName('');
-      setNumber('');
+      try {
+        // Dispatch the addNewContact thunk here
+        await dispatch(addNewContact({ name, number }));
+        form.reset();
+      } catch (error) {
+        alert('An error occurred while adding the contact.');
+      }
     } else {
-      alert('Name and number cannot be empty. Enter some text!');
+      alert('Enter Name and Number !!!');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={formStyles}>
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        style={inputStyles}
-      />
-      <input
-        type="text"
-        placeholder="Number"
-        value={number}
-        onChange={(e) => setNumber(e.target.value)}
-        style={inputStyles}
-      />
-      <button type="submit" style={buttonStyles}>
-        Add contact
-      </button>
+    <form onSubmit={handleSubmit}>
+      <input name="name" placeholder="Name" />
+      <input name="number" placeholder="Number" />
+      <button type="submit">Add Contact</button>
     </form>
   );
 };

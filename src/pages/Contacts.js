@@ -27,6 +27,9 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { getAllContactsThunk } from 'redux/contacts/thunk';
 import { selectTotalContacts } from 'redux/contacts/selectors';
+import { ContactEditor } from 'components/ContactEdit/ContactEdit';
+import { Contact } from 'components/Contacts/Contacts'
+
 
 
 export default function Contacts() {
@@ -42,7 +45,9 @@ export default function Contacts() {
       <div>
         <title>Your contacts</title>
       </div>
-
+      <ContactEditor/>
+    <Contact/>
+    
       <ul>
       {contacts.map(({ id, name, number }) => (
         <li key={id}>
