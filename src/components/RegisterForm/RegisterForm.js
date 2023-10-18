@@ -26,7 +26,7 @@ const styles = {
     fontSize: '16px',
   },
   button: {
-    backgroundColor: '#32cd32', // Green color
+    backgroundColor: '#32cd32',
     color: 'white',
     border: 'none',
     borderRadius: '4px',

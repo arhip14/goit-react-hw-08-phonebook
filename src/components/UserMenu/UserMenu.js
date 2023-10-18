@@ -18,7 +18,7 @@ export const UserMenu = () => {
       width:'60px'
     },
     welcomeText: {
-      fontSize: '14px', // Smaller font size
+      fontSize: '14px',
       fontWeight: 'bold',
       margin: '10px 0',
     },

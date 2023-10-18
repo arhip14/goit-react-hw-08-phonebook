@@ -12,7 +12,7 @@ import { filterReducer } from "./contacts/filterSlice";
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'], // Replace with the properties you want to persist
+  whitelist: ['token'],
 };
 
 const store = configureStore({

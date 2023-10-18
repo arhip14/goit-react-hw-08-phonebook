@@ -3,8 +3,6 @@ import { Navigation } from '../Navigation/Navigation';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { useAuth } from '../../hooks/useAuth';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
@@ -36,7 +34,6 @@ export const AppBar = () => {
     <header style={styles.appBar}>
       <Navigation />
       <div>
-        {/* <FontAwesomeIcon icon={faBars} style={styles.navIcon} /> */}
         <span style={styles.logo}>Phonebook</span>{' '}
         <span style={styles.greetingIcon} role="img" aria-label="Greeting icon">
           💁‍♀️

@@ -5,14 +5,14 @@ const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
-    background: 'lightgray', // Gray background color
+    background: 'lightgray',
     padding: '10px',
   },
   link: {
     margin: '10px',
     textDecoration: 'none',
-    color: 'blue', // Text color
-    fontSize: '16px', // Font size
+    color: 'blue', 
+    fontSize: '16px', 
   },
 };
 

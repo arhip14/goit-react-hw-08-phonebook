@@ -24,7 +24,7 @@ const styles = {
   },
   animationElement: {
     fontSize: '2rem',
-    animation: 'spin 2s linear infinite', // Rotating animation
+    animation: 'spin 2s linear infinite',
   },
   '@keyframes spin': {
     '0%': { transform: 'rotate(0deg)' },
@@ -44,7 +44,7 @@ export default function Home() {
           📞
         </span>
       </h1>
-      <div style={styles.animationElement}>🌟</div> {/* Animated element */}
+      <div style={styles.animationElement}>🌟</div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTotalContacts } from '../../redux/contacts/selectors';
-import { removeContact } from '../../redux/contacts/thunk'; // Adjust the import path as needed
+import { removeContact } from '../../redux/contacts/thunk';
+import { selectFilteredByName } from '../../redux/contacts/selectors';
 
 const listStyle = {
   listStyleType: 'none',
@@ -31,7 +31,7 @@ const buttonStyle = {
 };
 
 export const ContactList = () => {
-  const contacts = useSelector(selectTotalContacts);
+  const contacts = useSelector(selectFilteredByName);
   const dispatch = useDispatch();
 
   const handleDeleteContact = (id) => {

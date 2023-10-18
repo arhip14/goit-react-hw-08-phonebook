@@ -44,12 +44,13 @@ const validationSchema = Yup.object({
 export const ContactEditor = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, { resetForm }) => {
     const { name, number } = values;
 
     if (name && number) {
       try {
         await dispatch(addNewContact({ name, number }));
+        resetForm();
       } catch (error) {
         alert('An error occurred while adding the contact.');
       }
@@ -64,25 +65,35 @@ export const ContactEditor = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      <Form style={formStyle}>
-        <Field
-          style={inputStyle}
-          type="text"
-          name="name"
-          placeholder="Name"
-        />
-        <ErrorMessage name="name" component="div" style={{ color: 'red' }} />
-        <Field
-          style={inputStyle}
-          type="text"
-          name="number"
-          placeholder="Number"
-        />
-        <ErrorMessage name="number" component="div" style={{ color: 'red' }} />
-        <button style={buttonStyle} type="submit">
-          Add Contact
-        </button>
-      </Form>
+      {({ isSubmitting }) => (
+        <Form style={formStyle}>
+          <div>
+            <Field
+              style={inputStyle}
+              type="text"
+              name="name"
+              placeholder="Name"
+            />
+            <ErrorMessage name="name" component="div" style={{ color: 'red' }} />
+          </div>
+          <div>
+            <Field
+              style={inputStyle}
+              type="text"
+              name="number"
+              placeholder="Number"
+            />
+            <ErrorMessage name="number" component="div" style={{ color: 'red' }} />
+          </div>
+          <button
+            style={buttonStyle}
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Adding...' : 'Add Contact'}
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 };

@@ -7,7 +7,7 @@ export const fetchContacts = async () => {
 }
 
 export const postContacts = async ({ name, number }) => {
-  const response = await axios.post('/contacts', { name, number }); // Fixed the request data
+  const response = await axios.post('/contacts', { name, number });
   return response.data;
 }
 
