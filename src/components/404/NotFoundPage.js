@@ -8,19 +8,19 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
-    background: '#000', /* Темний фон */
-    color: '#FFF', /* Білий текст */
+    background: 'grey', 
+    color: '#FFF', 
   },
   heading: {
     fontSize: '48px',
     marginBottom: '20px',
-    color: '#ffa765', /* Оранжевий колір для заголовку */
+    color: '#ffa765',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
   },
   message: {
     fontSize: '24px',
     marginBottom: '20px',
-    color: '#ccc', /* Сірий колір для повідомлення */
+    color: '#ccc', 
   },
   returnButton: {
     background: 'linear-gradient(135deg, #ff6b6b, #ffa765)',

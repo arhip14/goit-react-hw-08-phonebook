@@ -6,8 +6,8 @@ import { useAuth } from '../../hooks/useAuth';
 import styled from 'styled-components';
 
 const AppBarContainer = styled.header`
-  background: #333; /* Темний сірий фон, аналогічний іншим компонентам */
-  color: #FFDAB9; /* Peach */
+  background: #333; 
+  color: #FFDAB9; 
   display: flex;
   justify-content: space-between;
   align-items: center;

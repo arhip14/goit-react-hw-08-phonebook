@@ -8,10 +8,10 @@ const UserMenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #333; /* Темний сірий фон, аналогічний Navigation */
-  padding: 10px; /* Збережено внутрішній відступ */
+  background: #333; 
+  padding: 10px; 
   border-radius: 8px;
-  width: 180px; /* Збільшено ширину контейнера */
+  width: 180px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 `;
 
@@ -19,25 +19,25 @@ const WelcomeText = styled.p`
   font-size: 14px;
   font-weight: bold;
   margin: 10px 0;
-  color: #FFDAB9; /* Peach */
+  color: #FFDAB9; 
 `;
 
 const LogoutButton = styled.button`
-  background-color: #4169E1; /* Royal blue */
-  color: #FFDAB9; /* Peach */
-  padding: 10px 20px; /* Збережено величину кнопки */
+  background-color: #4169E1; 
+  color: #FFDAB9; 
+  padding: 10px 20px; 
   border-radius: 5px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #FFA500; /* Orange on hover */
+    background-color: #FFA500; 
   }
 `;
 
 const UserIcon = styled.span`
-  font-size: 30px; /* Зменшено розмір іконки користувача */
-  color: #FFD700; /* Золотий колір для іконки користувача */
+  font-size: 30px; 
+  color: #FFD700; 
   margin-bottom: 10px;
 `;
 

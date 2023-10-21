@@ -6,50 +6,54 @@ import styled from 'styled-components';
 
 const ListContainer = styled.ul`
   list-style-type: none;
-  padding: 0;
-  max-width: 400px;
-  margin: 0 auto;
+  padding: 10px;
+  max-width: 800px;
+  margin: 10px auto;
 `;
 
 const ListItem = styled.li`
   display: flex;
+  flex-direction:row;
   justify-content: space-between;
   align-items: center;
-  background: #333; /* Темний сірий фон */
-  color: #fff; /* Білий текст */
-  padding: 10px;
-  border: 1px solid #444; /* Темно-сірий бордюр */
+  background: #333; 
+  color: #fff; 
+  padding: 20px;
+  border: 1px solid #444; 
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   transition: background-color 0.3s;
   &:hover {
-    background: #444; /* Змінюйте колір при наведенні */
+    background: #444; 
   }
 `;
 
 const ContactInfo = styled.div`
-  flex: 1;
+  
 `;
 
 const ContactName = styled.p`
   font-weight: bold;
-  margin: 0;
+
+
 `;
 
 const ContactNumber = styled.p`
-  margin: 0;
+  
+  
 `;
 
 const DeleteButton = styled.button`
   background-color: #ff5733;
-  color: #fff; /* Білий текст */
+  margin-left: 20px;
+  color: #fff; 
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
-    background: #ff4500; /* Змінюйте колір при наведенні */
+    background: #ff4500; 
   }
 `;
 

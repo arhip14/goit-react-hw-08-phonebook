@@ -4,8 +4,8 @@ import { register } from '../../redux/auth/operations';
 import styled from 'styled-components';
 
 const Form = styled.form`
-  background-color: #4169E1; /* Royal blue */
-  color: #FFDAB9; /* Peach */
+  background-color: #4169E1; 
+  color: #FFDAB9;
   padding: 20px;
   border-radius: 8px;
   width: 300px;
@@ -17,13 +17,13 @@ const Form = styled.form`
 const Label = styled.label`
   display: block;
   margin-bottom: 10px;
-  color: #FFDAB9; /* Peach */
+  color: #FFDAB9; 
 `;
 
 const Input = styled.input`
-  background-color: #333; /* Темний сірий фон */
-  color: #fff; /* Білий текст */
-  border: 1px solid #444; /* Темно-сірий бордюр */
+  background-color: #333; 
+  color: #fff; 
+  border: 1px solid #444;
   border-radius: 4px;
   padding: 8px;
   width: 100%;
@@ -31,8 +31,8 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  background-color: #4169E1; /* Royal blue */
-  color: #FFDAB9; /* Peach */
+  background-color: #4169E1; 
+  color: #FFDAB9; 
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -40,7 +40,7 @@ const Button = styled.button`
   margin-top: 10px;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #284D93; /* Darker blue on hover */
+    background-color: #284D93; 
   }
 `;
 

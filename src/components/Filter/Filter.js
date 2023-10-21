@@ -7,15 +7,16 @@ import styled from 'styled-components';
 const FilterContainer = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f5f5f5; /* Light gray background */
+  background-color:#4169E1; 
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom:20px;
 `;
 
 const FilterLabel = styled.label`
   margin-right: 10px;
-  color: #333; /* Dark gray text */
+  color: #FFDAB9; 
   font-weight: bold;
   font-size: 14px;
 `;
@@ -26,13 +27,14 @@ const FilterInput = styled.input`
   border-radius: 5px;
   padding: 8px;
   font-size: 16px;
-  color: #333; /* Dark gray text */
+  color: #333; 
 `;
 
 const FilterIcon = styled.span`
   font-size: 24px;
-  color: #007bff; /* Blue color */
+  color: ##FFDAB9; 
   cursor: pointer;
+  margin-left:10px;
 `;
 
 export const Filter = () => {

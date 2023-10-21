@@ -5,8 +5,8 @@ import { deleteContact } from '../../redux/contacts/thunks';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #121212; /* Dark background color */
-  color: #fff; /* White text color */
+  background-color: #121212; 
+  color: #fff; 
   padding: 20px;
   border-radius: 10px;
   width: 300px;
@@ -16,6 +16,7 @@ const Container = styled.div`
 const List = styled.ul`
   list-style: none;
   padding: 0;
+  gap:20px;
 `;
 
 const ListItem = styled.li`
@@ -40,7 +41,7 @@ const ContactNumber = styled.p`
 `;
 
 const DeleteButton = styled.button`
-  background-color: #ff0000; /* Red delete button */
+  background-color: #ff0000; 
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -48,7 +49,7 @@ const DeleteButton = styled.button`
   cursor: pointer;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #ff4500; /* Red on hover */
+    background-color: #ff4500; 
   }
 `;
 

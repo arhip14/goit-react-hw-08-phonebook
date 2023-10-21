@@ -4,19 +4,19 @@ import styled from 'styled-components';
 
 const AuthNavContainer = styled.div`
   display: flex;
-  justify-content: center; /* Відцентрувати горизонтально */
-  background: #333; /* Темний сірий фон, аналогічний Navigation та UserMenu */
+  justify-content: center;
+  background: #333; 
   padding: 10px;
 `;
 
 const AuthNavLink = styled(NavLink)`
   margin: 10px;
   text-decoration: none;
-  color: #4169E1; /* Royal blue, аналогічний Navigation */
+  color: #4169E1; 
   font-size: 16px;
   transition: color 0.3s;
   &:hover {
-    color: #FFDAB9; /* Peach on hover, аналогічний Navigation */
+    color: #FFDAB9;
   }
 `;
 

@@ -7,26 +7,26 @@ const NavigationContainer = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #333; /* Темний сірий фон */
+  background: #333;
   padding: 10px;
-  border-bottom: 2px solid #4169E1; /* Royal blue */
+  border-bottom: 2px solid #4169E1; 
 `;
 
 const NavigationLink = styled(NavLink)`
   text-decoration: none;
   margin: 0 20px;
-  color: #FFDAB9; /* Peach */
+  color: #FFDAB9;
   font-size: 18px;
   transition: color 0.3s;
   &:hover {
-    color: #FFA500; /* Orange on hover */
+    color: #FFA500; 
   }
 `;
 
 const CustomLogo = styled.span`
   font-size: 24px;
   margin-right: 10px;
-  color: #4169E1; /* Royal blue */
+  color: #4169E1;
 `;
 
 export const Navigation = () => {

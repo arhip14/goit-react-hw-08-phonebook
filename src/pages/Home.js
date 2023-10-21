@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #4169E1; /* Royal blue */
-  color: #FFDAB9; /* Peach */
+  background-color: #4169E1;
+  color: #FFDAB9;
   text-align: center;
   padding: 40px;
   border-radius: 20px;

@@ -7,8 +7,8 @@ import { selectTotalContacts } from 'redux/contacts/selectors';
 import styled from 'styled-components';
 
 const ContactEditorContainer = styled.div`
-  background-color: #4169E1; /* Royal blue */
-  color: #FFDAB9; /* Peach */
+  background-color: #4169E1; 
+  color: #FFDAB9;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -31,7 +31,7 @@ const FormField = styled.div`
 `;
 
 const InputField = styled(Field)`
-  background-color: #f0f0f0; /* Light gray input background */
+  background-color: #f0f0f0; 
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -44,7 +44,7 @@ const ErrorMessageText = styled(ErrorMessage)`
 `;
 
 const AddContactButton = styled.button`
-  background-color: #ff5733; /* Orange */
+  background-color: #ff5733; 
   color: white;
   border: none;
   border-radius: 5px;
