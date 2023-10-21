@@ -2,33 +2,38 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { contactsFilter } from '../../redux/contacts/filterSlice';
 import { selectFilteredContact } from '../../redux/contacts/selectors';
+import styled from 'styled-components';
 
-const filterStyle = {
-  marginBottom: '20px',
-  backgroundColor: 'transparent',
-  boxShadow: '0px 2px 5px -1px rgba(0, 0, 0, 0.65)',
-  borderRadius: '8px',
-  transition: 'background-color 250ms ease-in, box-shadow 250ms ease-in',
-  display: 'flex',
-  alignItems: 'center',
-  padding: '10px',
-};
+const FilterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+`;
 
-const labelStyle = {
-  marginRight: '10px',
-  color: 'rgba(0, 0, 0, 0.8)',
-  fontWeight: 'bold',
-  fontSize: '14px',
-};
+const FilterLabel = styled.label`
+  margin-right: 10px;
+  color: #333; /* Dark gray text */
+  font-weight: bold;
+  font-size: 14px;
+`;
 
-const inputStyle = {
-  flex: 1,
-  border: 'none',
-  borderRadius: '5px',
-  padding: '5px 10px',
-  boxShadow: '0 2px 2px rgba(0, 0, 0, 0.1)',
-  fontSize: '16px',
-};
+const FilterInput = styled.input`
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+  color: #333; /* Dark gray text */
+`;
+
+const FilterIcon = styled.span`
+  font-size: 24px;
+  color: #007bff; /* Blue color */
+  cursor: pointer;
+`;
 
 export const Filter = () => {
   const nameFromFilter = useSelector(selectFilteredContact);
@@ -38,16 +43,22 @@ export const Filter = () => {
     dispatch(contactsFilter(e.currentTarget.value));
   };
 
+  const handleClearFilter = () => {
+    dispatch(contactsFilter(''));
+  };
+
   return (
-    <div style={filterStyle}>
-      <label style={labelStyle}>Filter by Name:</label>
-      <input
-        style={inputStyle}
+    <FilterContainer>
+      <FilterLabel>Filter by Name:</FilterLabel>
+      <FilterInput
         placeholder="Search..."
         name="filter"
         value={nameFromFilter}
         onChange={handleFilterChange}
       />
-    </div>
+      {nameFromFilter && (
+        <FilterIcon onClick={handleClearFilter}>✕</FilterIcon>
+      )}
+    </FilterContainer>
   );
 };

@@ -1,40 +1,48 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
+import styled from 'styled-components';
 
-const styles = {
-  form: {
-    width: '300px',
-    margin: '0 auto',
-    padding: '20px',
-    backgroundColor: '#f4f4f4',
-    borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: '20px',
-    fontSize: '18px',
-  },
-  input: {
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    fontSize: '16px',
-  },
-  button: {
-    backgroundColor: '#32cd32',
-    color: 'white',
-    border: 'none',
-    borderRadius: '4px',
-    padding: '10px 20px',
-    fontSize: '18px',
-    cursor: 'pointer',
-  },
-};
+const Form = styled.form`
+  background-color: #4169E1; /* Royal blue */
+  color: #FFDAB9; /* Peach */
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+`;
+
+const Label = styled.label`
+  display: block;
+  margin-bottom: 10px;
+  color: #FFDAB9; /* Peach */
+`;
+
+const Input = styled.input`
+  background-color: #333; /* Темний сірий фон */
+  color: #fff; /* Білий текст */
+  border: 1px solid #444; /* Темно-сірий бордюр */
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  margin-top: 5px;
+`;
+
+const Button = styled.button`
+  background-color: #4169E1; /* Royal blue */
+  color: #FFDAB9; /* Peach */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #284D93; /* Darker blue on hover */
+  }
+`;
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -53,22 +61,20 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off" style={styles.form}>
-      <label style={styles.label}>
+    <Form onSubmit={handleSubmit} autoComplete="off">
+      <Label>
         Username
-        <input type="text" name="name" style={styles.input} />
-      </label>
-      <label style={styles.label}>
+        <Input type="text" name="name" />
+      </Label>
+      <Label>
         Email
-        <input type="email" name="email" style={styles.input} />
-      </label>
-      <label style={styles.label}>
+        <Input type="email" name="email" />
+      </Label>
+      <Label>
         Password
-        <input type="password" name="password" style={styles.input} />
-      </label>
-      <button type="submit" style={styles.button}>
-        Register
-      </button>
-    </form>
+        <Input type="password" name="password" />
+      </Label>
+      <Button type="submit">Register</Button>
+    </Form>
   );
 };

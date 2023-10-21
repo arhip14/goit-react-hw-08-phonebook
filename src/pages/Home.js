@@ -1,50 +1,75 @@
-const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: 'linear-gradient(180deg, #FF6B6B, #FF9A8B)',
-    color: '#fff',
-    fontFamily: 'Arial, sans-serif',
-    textAlign: 'center',
-    padding: '2rem',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: '3rem',
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-  },
-  emoji: {
-    fontSize: '2rem',
-    marginLeft: '0.5rem',
-  },
-  icon: {
-    fontSize: '3rem',
-  },
-  animationElement: {
-    fontSize: '2rem',
-    animation: 'spin 2s linear infinite',
-  },
-  '@keyframes spin': {
-    '0%': { transform: 'rotate(0deg)' },
-    '100%': { transform: 'rotate(360deg)' },
-  },
+import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  background-color: #4169E1; /* Royal blue */
+  color: #FFDAB9; /* Peach */
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+`;
+
+const Title = styled.h1`
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-decoration: underline;
+`;
+
+const Subtitle = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-style: italic;
+`;
+
+const FeatureList = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const FeatureItem = styled.li`
+  margin: 20px;
+  font-size: 1.5rem;
+`;
+
+const PhoneIcon = styled.span`
+  font-size: 3rem;
+  margin-right: 20px;
+`;
+
+const HighlightedText = styled.span`
+  background-color: #FFDAB9; /* Peach */
+  color: #4169E1; /* Royal blue */
+  padding: 5px;
+  border-radius: 10px;
+`;
+
+const Home = () => {
+  return (
+    <Container>
+      <Title>
+        <HighlightedText>Phonebook</HighlightedText>
+      </Title>
+      <Subtitle>Your Go-To Contact Management Solution</Subtitle>
+      <FeatureList>
+        <FeatureItem>
+          <PhoneIcon role="img" aria-label="Phone icon">
+            📞
+          </PhoneIcon>
+          Easy Contact Management
+        </FeatureItem>
+        <FeatureItem>
+          <PhoneIcon role="img" aria-label="Phone icon">
+            📞
+          </PhoneIcon>
+          Quick Access to Contacts
+        </FeatureItem>
+      </FeatureList>
+    </Container>
+  );
 };
 
-export default function Home() {
-  return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>
-        Phonebook
-        <span role="img" aria-label="Greeting icon" style={styles.emoji}>
-          💁‍♀️
-        </span>
-        <span role="img" aria-label="Phone icon" style={styles.icon}>
-          📞
-        </span>
-      </h1>
-      <div style={styles.animationElement}>🌟</div>
-    </div>
-  );
-}
+export default Home;

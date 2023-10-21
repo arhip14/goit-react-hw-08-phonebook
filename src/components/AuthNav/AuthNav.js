@@ -1,30 +1,30 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    background: 'lightgray',
-    padding: '10px',
-  },
-  link: {
-    margin: '10px',
-    textDecoration: 'none',
-    color: 'blue', 
-    fontSize: '16px', 
-  },
-};
+const AuthNavContainer = styled.div`
+  display: flex;
+  justify-content: center; /* Відцентрувати горизонтально */
+  background: #333; /* Темний сірий фон, аналогічний Navigation та UserMenu */
+  padding: 10px;
+`;
+
+const AuthNavLink = styled(NavLink)`
+  margin: 10px;
+  text-decoration: none;
+  color: #4169E1; /* Royal blue, аналогічний Navigation */
+  font-size: 16px;
+  transition: color 0.3s;
+  &:hover {
+    color: #FFDAB9; /* Peach on hover, аналогічний Navigation */
+  }
+`;
 
 export const AuthNav = () => {
   return (
-    <div style={styles.container}>
-      <NavLink to="/register" style={styles.link}>
-        Register
-      </NavLink>
-      <NavLink to="/login" style={styles.link}>
-        Log In
-      </NavLink>
-    </div>
+    <AuthNavContainer>
+      <AuthNavLink to="/register">Register</AuthNavLink>
+      <AuthNavLink to="/login">Log In</AuthNavLink>
+    </AuthNavContainer>
   );
 };

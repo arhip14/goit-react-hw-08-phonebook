@@ -2,36 +2,55 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectTotalContacts } from '../../redux/contacts/selectors';
 import { deleteContact } from '../../redux/contacts/thunks';
+import styled from 'styled-components';
 
-const containerStyle = {
-  maxWidth: '600px',
-  margin: '0 auto',
-  padding: '20px',
-};
+const Container = styled.div`
+  background-color: #121212; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+`;
 
-const listStyle = {
-  listStyleType: 'none',
-  padding: 0,
-};
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
 
-const listItemStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  background: '#f5f5f5',
-  padding: '10px',
-  border: '1px solid #ddd',
-  borderRadius: '5px',
-  marginBottom: '10px',
-};
+const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+`;
 
-const buttonStyle = {
-  backgroundColor: '#ff5733',
-  color: 'white',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer',
-};
+const ContactInfo = styled.div`
+  flex: 1;
+`;
+
+const ContactName = styled.p`
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+`;
+
+const ContactNumber = styled.p`
+  margin: 0;
+`;
+
+const DeleteButton = styled.button`
+  background-color: #ff0000; /* Red delete button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #ff4500; /* Red on hover */
+  }
+`;
 
 export const ContactList = () => {
   const contacts = useSelector(selectTotalContacts);
@@ -42,23 +61,18 @@ export const ContactList = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      <ul style={listStyle}>
+    <Container>
+      <List>
         {contacts.map(({ id, name, number }) => (
-          <li key={id} style={listItemStyle}>
-            <div>
-              <p style={{ fontWeight: 'bold', fontSize: '18px' }}>{name}</p>
-              <p>{number}</p>
-            </div>
-            <button
-              onClick={() => handleDeleteContact(id)}
-              style={buttonStyle}
-            >
-              Delete
-            </button>
-          </li>
+          <ListItem key={id}>
+            <ContactInfo>
+              <ContactName>{name}</ContactName>
+              <ContactNumber>{number}</ContactNumber>
+            </ContactInfo>
+            <DeleteButton onClick={() => handleDeleteContact(id)}>Delete</DeleteButton>
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Container>
   );
 };
